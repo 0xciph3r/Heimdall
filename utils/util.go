@@ -1,0 +1,103 @@
+package utils
+
+import (
+	"log"
+	"os"
+	"strconv"
+	"time"
+
+	"github.com/joho/godotenv"
+)
+
+type ConnectionMetrics struct {
+	ID                  uint      `json:"id" gorm:"primary_key"`
+	Timestamp           time.Time `json:"timestamp" gorm:"not null;index"`
+	BlockHeight         int64     `json:"block_height"`
+	BlockHash           string    `json:"block_hash"`
+	BestHeaderAge       int64     `json:"best_header_age"`
+	SyncedToChain       bool      `json:"synched_to_chain"`
+	SyncProgress        float64   `json:"sync_progress"`
+	NumBTCPeers         int32     `json:"num_of_btc_peers"`
+	NumLNDPeers         int32     `json:"num_lnd_peers"`
+	NumPendingChannels  int32     `json:"num_pending_channels"`
+	NumActiveChannels   int32     `json:"num_active_channels"`
+	NumInactiveChannels int32     `json:"num_inactive_channels"`
+	BtcdBandwidthIn     uint64    `json:"btc_bandwidth_in"`
+	BtcdBandwidthOut    uint64    `json:"btc_bandwidth_out"`
+}
+
+type Latency struct {
+	ID              uint `json:"id" gorm:"primary_key"`
+	Timestamp       time.Time
+	Node            string `json:"node"`
+	Target          string
+	PacketsSent     int
+	PacketsReceived int
+	PacketLoss      float64
+	RTTMin          float64
+	RTTAvg          float64
+	RTTMax          float64
+	RTTStdDev       float64
+}
+
+const (
+	AlertStatusOpen         = "open"
+	AlertStatusAcknowledged = "acknowledged"
+	AlertStatusResolved     = "resolved"
+)
+
+type Alert struct {
+	ID          uint       `json:"id" gorm:"primary_key"`
+	CreatedAt   time.Time  `json:"created_at"`
+	UpdatedAt   time.Time  `json:"updated_at"`
+	Type        string     `json:"type" gorm:"not null;index"`
+	Severity    string     `json:"severity" gorm:"not null"`
+	Status      string     `json:"status" gorm:"not null;index"`
+	Message     string     `json:"message" gorm:"not null"`
+	MetricValue float64    `json:"metric_value"`
+	Threshold   float64    `json:"threshold"`
+	TriggeredAt time.Time  `json:"triggered_at" gorm:"not null;index"`
+	ResolvedAt  *time.Time `json:"resolved_at,omitempty"`
+	AckedAt     *time.Time `json:"acked_at,omitempty"`
+}
+
+func GetEnv(key string) string {
+
+	err := godotenv.Load()
+
+	if err != nil {
+		log.Println("Error loading .env file, will use system environment variables.")
+	}
+
+	return os.Getenv(key)
+}
+
+func GetEnvInt(key string, defaultValue int) int {
+	raw := GetEnv(key)
+	if raw == "" {
+		return defaultValue
+	}
+
+	parsed, err := strconv.Atoi(raw)
+	if err != nil {
+		log.Printf("Invalid integer value for %s, using default: %d", key, defaultValue)
+		return defaultValue
+	}
+
+	return parsed
+}
+
+func GetEnvFloat(key string, defaultValue float64) float64 {
+	raw := GetEnv(key)
+	if raw == "" {
+		return defaultValue
+	}
+
+	parsed, err := strconv.ParseFloat(raw, 64)
+	if err != nil {
+		log.Printf("Invalid float value for %s, using default: %f", key, defaultValue)
+		return defaultValue
+	}
+
+	return parsed
+}
