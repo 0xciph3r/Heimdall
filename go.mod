@@ -1,4 +1,4 @@
-module github.com/NonsoAmadi10/p2p-analysis
+module github.com/0xciph3r/p2p-analysis
 
 go 1.19
 

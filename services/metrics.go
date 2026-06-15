@@ -7,10 +7,10 @@ import (
 	"sort"
 	"time"
 
-	"github.com/NonsoAmadi10/p2p-analysis/bitcoin"
-	"github.com/NonsoAmadi10/p2p-analysis/db"
-	"github.com/NonsoAmadi10/p2p-analysis/lightning"
-	"github.com/NonsoAmadi10/p2p-analysis/utils"
+	"github.com/0xciph3r/p2p-analysis/bitcoin"
+	"github.com/0xciph3r/p2p-analysis/db"
+	"github.com/0xciph3r/p2p-analysis/lightning"
+	"github.com/0xciph3r/p2p-analysis/utils"
 	"github.com/lncm/lnd-rpc/v0.10.0/lnrpc"
 )
 

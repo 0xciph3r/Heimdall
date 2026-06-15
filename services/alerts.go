@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/NonsoAmadi10/p2p-analysis/db"
-	"github.com/NonsoAmadi10/p2p-analysis/utils"
+	"github.com/0xciph3r/p2p-analysis/db"
+	"github.com/0xciph3r/p2p-analysis/utils"
 	"gorm.io/gorm"
 )
 

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/NonsoAmadi10/p2p-analysis/bitcoin"
+	"github.com/0xciph3r/p2p-analysis/bitcoin"
 	"github.com/btcsuite/btcd/rpcclient"
 )
 

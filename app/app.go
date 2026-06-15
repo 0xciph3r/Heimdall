@@ -1,7 +1,7 @@
 package app
 
 import (
-	"github.com/NonsoAmadi10/p2p-analysis/controllers"
+	"github.com/0xciph3r/p2p-analysis/controllers"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 )

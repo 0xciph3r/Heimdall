@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/NonsoAmadi10/p2p-analysis/lightning"
+	"github.com/0xciph3r/p2p-analysis/lightning"
 	"github.com/lncm/lnd-rpc/v0.10.0/lnrpc"
 )
 

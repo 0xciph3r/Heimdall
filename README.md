@@ -12,7 +12,7 @@ Heimdall is a Go service that collects and exposes node connectivity and network
 
 1. Clone the repo and install dependencies:
 ```bash
-git clone https://github.com/NonsoAmadi10/Heimdall
+git clone https://github.com/0xciph3r/Heimdall
 cd Heimdall
 go mod download
 ```

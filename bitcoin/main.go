@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/NonsoAmadi10/p2p-analysis/utils"
+	"github.com/0xciph3r/p2p-analysis/utils"
 	"github.com/btcsuite/btcd/rpcclient"
 )
 

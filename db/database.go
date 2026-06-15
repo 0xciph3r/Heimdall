@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/NonsoAmadi10/p2p-analysis/utils"
+	"github.com/0xciph3r/p2p-analysis/utils"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )

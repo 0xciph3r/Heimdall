@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/NonsoAmadi10/p2p-analysis/services"
+	"github.com/0xciph3r/p2p-analysis/services"
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
 )

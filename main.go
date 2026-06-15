@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/NonsoAmadi10/p2p-analysis/app"
-	"github.com/NonsoAmadi10/p2p-analysis/services"
+	"github.com/0xciph3r/p2p-analysis/app"
+	"github.com/0xciph3r/p2p-analysis/services"
 )
 
 func main() {

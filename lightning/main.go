@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/NonsoAmadi10/p2p-analysis/utils"
+	"github.com/0xciph3r/p2p-analysis/utils"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"gopkg.in/macaroon.v2"
